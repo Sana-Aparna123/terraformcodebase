@@ -15,10 +15,8 @@ resource "type-of-resource" "name-of-the-resource" {
 ### Terraform Credentials for AWS.   
 * nano ~/.bashrc   
 * Add the below details in bash file     
-   export AWS_ACCESS_KEY_ID=''      
-   export AWS_SECRET_ACCESS_KEY=''     
-   export AWS_REGION = ''   
-
+   - export AWS_ACCESS_KEY_ID=''      
+   - export AWS_SECRET_ACCESS_KEY=''     
+   - export AWS_REGION = ''   
 * source ~/.bashrc     
-
 * update the access key and secret key details in  "~/.aws/credentials" file.
