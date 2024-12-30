@@ -26,4 +26,14 @@ resource "type-of-resource" "name-of-the-resource" {
 * Creaing branches based on user stories.    
 * Pushing the branch to remote repo and raising the Pull Request.      
 * Inviting collaborators and assign as reviewer for approval.     
-* Deleting the branches once the PR is approved and merged.     
+* Deleting the branches once the PR is approved and merged.  
+
+
+* Task-2  
+   - Enforcing terrform version for all users?  
+   - How multile developers can edit the same code?     
+   - How can we resolve merge conflicts?   
+   - Using variables in Terraform Code?   
+   - Using tfvars to pass variable information?   
+
+
