@@ -7,7 +7,7 @@ resource "aws_instance" "Nginx-Server" {
   associate_public_ip_address = true
   key_name                    = var.key_name_instance
 
-   tags = {
+  tags = {
     Name       = "${var.vpc_name}-Nginx-Server"
     Env        = "Prod"
     Owner      = "Aparna"
@@ -25,10 +25,11 @@ resource "aws_instance" "Nginx-Server" {
    systemctl enable nginx
    echo "<div><h1>$(cat /etc/hostname)</h1></div>" >> /usr/share/nginx/html/index.html
   EOF
-   
-    lifecycle {
-        ignore_changes = [
-          user_data,
-        ]
-    }
+
+  lifecycle {
+    ignore_changes = [
+      user_data,
+      tags
+    ]
+  }
 }
