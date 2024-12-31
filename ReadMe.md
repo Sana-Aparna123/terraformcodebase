@@ -39,11 +39,16 @@ resource "type-of-resource" "name-of-the-resource" {
    - git commit --amend  to change the existing commit and which will create a new commit.    
    - Force pushing.Not recommended. git push origin <branch-name> --force    
    - Deploying specific terraform resource instead of running all code.     
-      terraform apply -target <resource>  
-   - Terraform Lifecycle Args  
-      - Prevent Destroy
-      - Create Before Destroy
-      - Ignore changes      
+      terraform apply -target <resource>     
+   - Terraform Lifecycle Args    
+      - Prevent Destroy   
+      - Create Before Destroy   
+      - Ignore changes   
+   - Terraform state commands    #hese actions will performed in statefile   
+      - terraform state list       
+      - terraform state show <resource>     
+      - terraform state mv<resource-old-name> <resource-new-name>    
+      - terraform state pull >> state.json  #To check the statefile.    
     
 
 

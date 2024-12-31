@@ -1,5 +1,5 @@
-resource "aws_instance" "Nginx-Server" {
-  ami                         = var.image_name
+resource "aws_instance" "Nginx-Server-01" {
+  ami                        = var.image_name
   instance_type               = var.instance_type
   availability_zone           = "us-east-1a"
   subnet_id                   = aws_subnet.subnet1.id
@@ -31,5 +31,7 @@ resource "aws_instance" "Nginx-Server" {
       user_data,
       tags
     ]
+    #revent_destroy = true  # Prevents the instance from being destroyed by terraform
+    prevent_destroy = false
   }
 }
