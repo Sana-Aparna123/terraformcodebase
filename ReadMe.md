@@ -31,9 +31,11 @@ resource "type-of-resource" "name-of-the-resource" {
 
 * Task-2  
    - Enforcing terrform version for all users?  
-   - How multile developers can edit the same code?     
-   - How can we resolve merge conflicts?   
-   - Using variables in Terraform Code?   
-   - Using tfvars to pass variable information?   
+   - Using variables in Terraform Code?     
+   - Using tfvars to pass variable information?  
+   - git pull = git fetch + git merge 
+   - How multile developers can edit the same code?       
+   - How can we resolve merge conflicts?      
+    
 
 

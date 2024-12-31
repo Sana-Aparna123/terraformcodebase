@@ -1,9 +1,9 @@
 resource "aws_vpc" "vpc1" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = var.vpc_cidr_range
   enable_dns_hostnames = true
 
   tags = {
-    Name = "vpc1"
+    Name = var.vpc_name
   }
 
 }
@@ -13,7 +13,7 @@ resource "aws_internet_gateway" "vpc1-igw" {
   vpc_id = aws_vpc.vpc1.id #implicit dependency on the VPC resource
 
   tags = {
-    Name = "vpc1-igw"
+    Name = var.igw_name
   }
 }
 
