@@ -11,7 +11,7 @@ resource "aws_security_group" "allow_tls" {
     description = "Allow_tcp3389_traffic"
     from_port   = 3389
     to_port     = 3389
-    protocol    = "-1"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
