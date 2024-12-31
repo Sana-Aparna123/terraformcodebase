@@ -37,7 +37,9 @@ resource "type-of-resource" "name-of-the-resource" {
    - How multile developers can edit the same code?       
    - How can we resolve merge conflicts?     
    - git commit --amend  to change the existing commit and which will create a new commit.    
-   - Force pushing.Not recommended. git push origin <branch-name> --force     
+   - Force pushing.Not recommended. git push origin <branch-name> --force    
+   - Deploying specific terraform resource instead of running all code.     
+      terraform apply -target <resource>        
     
 
 
