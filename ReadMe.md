@@ -35,7 +35,9 @@ resource "type-of-resource" "name-of-the-resource" {
    - Using tfvars to pass variable information?  
    - git pull = git fetch + git merge 
    - How multile developers can edit the same code?       
-   - How can we resolve merge conflicts?      
+   - How can we resolve merge conflicts?     
+   - git commit --amend  to change the existing commit and which will create a new commit.    
+   - Force pushing.Not recommended. git push origin <branch-name> --force     
     
 
 
