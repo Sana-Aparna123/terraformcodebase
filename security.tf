@@ -15,13 +15,5 @@ resource "aws_security_group" "allow_tls" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-   ingress {
-    description = "Allow_tcp3389_traffic"
-    from_port   = 3389
-    to_port     = 3389
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
 }
 
