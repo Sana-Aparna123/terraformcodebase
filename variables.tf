@@ -21,7 +21,7 @@ variable "subnet1_cidr_range" {
 }
 
 variable "subnet2_cidr_range" {
-  description = "The CIDR range for subnet2"
+  description = "The CIDR rane for subnet2"
   type        = string
 }
 
@@ -31,3 +31,19 @@ variable "subnet3_cidr_range" {
 
 }
 
+variable "instance_type" {
+  description = "The type of EC2 instance to launch"
+  type        = string
+
+}
+
+variable "image_name" {
+  description = "The name of the AMI to use for the EC2 instance"
+  type        = string
+}
+
+variable "key_name_instance" {
+  description = "The name of the key pair to use for the EC2 instance"
+  type        = string
+
+}
