@@ -1,5 +1,6 @@
 resource "aws_instance" "Nginx-Server-01" {
-  ami                        = var.image_name
+  count                       = 0
+  ami                         = var.image_name
   instance_type               = var.instance_type
   availability_zone           = "us-east-1a"
   subnet_id                   = aws_subnet.subnet1.id

@@ -48,7 +48,12 @@ resource "type-of-resource" "name-of-the-resource" {
       - terraform state list       
       - terraform state show <resource>     
       - terraform state mv<resource-old-name> <resource-new-name>    
-      - terraform state pull >> state.json  #To check the statefile.    
+      - terraform state pull >> state.json  #To check the statefile.  
+
+* Task-3
+   - Terraform state locking with DynamoDB Table.
+   - Deleting commits with git reset 
+
     
 
 
