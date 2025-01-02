@@ -50,13 +50,40 @@ resource "type-of-resource" "name-of-the-resource" {
       - terraform state mv<resource-old-name> <resource-new-name>    
       - terraform state pull >> state.json  #To check the statefile.  
 
-* Task-3
-   - Terraform state locking with DynamoDB Table.
-   - Removing resource from a statefile to avoid  destroy.
-      - Example: terraform state rm aws_dynamodb_table.terraform_lock
-      - Remove or comment the resource block in the Terraform block.
-   - Deleting commits with git reset 
+* Task-3    
+   - Terraform state locking with DynamoDB Table.       
+   - Removing resource from a statefile to avoid  destroy.    
+      - Example: terraform state rm aws_dynamodb_table.terraform_lock   
+      - Remove or comment the resource block in the Terraform block.     
+   - Deleting commits with git reset              
+      - Git Reset types are HARD,SOFT AND MIXED(Default).               
+      - Hard reset will delete commits and files so which results on dataloss.               
+         - git reset --hard HEAD~5 (or) git reset --hard <commit-id>             
+      - Soft reset will delete commits not files nut files will be staged so we can create as a new commit.                
+         - git reset --soft  HEAD~5 (or) git reset --soft <commit-id>            
+      - Mixed reset work like as an soft reset and it is default.  or Mixed reset will delete commits but files will be unstaged so we need to add and commit.           
+         - git reset --mixed HEAD~5 (or) git reset --mixed <commit-id>   
 
+   - Revertiong changes with git revert            
+      - The challenge with git reevert is commits get deleted.               
+      - Using git revert we can revert changes without deleting commits.          
+      - This can be achieved by removing the changes and creating a new commit.      
+         - git revert <commit-id>       
+         
+
+   - Deleting and Restoring branches      
+      - git branch -D <branch-name>  #delete local branch          
+      - git push origin -d <branch-name>   #delete remote branch     
+      - we can restore deleted branches using git reflog and checkout commits.
+      - Create a branch you want and branch is restored.    
+
+   - Cherry-pick can be used to merge specific commit from one branch to another branch.   
+      - git cherry-pick <commit-id>   #To get specific commit in another branch  (or)     
+
+   - Cherry-pick commits    
+      - I want to take a commit in demo branch and merge it with dev branch.     
+      - git checkout dev && git cherry-pick <commit-id-in-demo-branch>      
+      - cherry-pick is good choice for hotfix      
     
 
 
