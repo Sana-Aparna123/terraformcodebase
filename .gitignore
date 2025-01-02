@@ -1,6 +1,6 @@
 .terraform/
 .terraform.lock.hcl
-terraform.tfstate
 terraform.tfstate.backup
 state.json
+terraform.tfstate
 

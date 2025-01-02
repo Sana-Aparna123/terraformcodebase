@@ -86,5 +86,11 @@ resource "type-of-resource" "name-of-the-resource" {
       - git checkout dev && git cherry-pick <commit-id-in-demo-branch>      
       - cherry-pick is good choice for hotfix      
     
+   - Getting the terraform statefile from s3 bucket(remote backend) to local backend(locally).
+      - terraform state pull > terraform.tfstate
+      - comment the backend in provider.tf file
+      - Run terraform init -migrate-state 
+
+
 
 
