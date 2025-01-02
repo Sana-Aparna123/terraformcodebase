@@ -18,9 +18,9 @@ resource "aws_security_group" "allow_tls" {
 
 
   ingress {
-    description = "Allow_tcp22_traffic"
-    from_port   = 22
-    to_port     = 22
+    description = "Allow_tcp1433_traffic"
+    from_port   = 1433
+    to_port     = 1433
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

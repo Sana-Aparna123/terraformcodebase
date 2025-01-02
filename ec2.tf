@@ -1,5 +1,5 @@
 resource "aws_instance" "Nginx-Server-01" {
-  count                       = 0
+  # count                       = 0
   ami                         = var.image_name
   instance_type               = var.instance_type
   availability_zone           = "us-east-1a"
