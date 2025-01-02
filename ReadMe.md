@@ -52,6 +52,9 @@ resource "type-of-resource" "name-of-the-resource" {
 
 * Task-3
    - Terraform state locking with DynamoDB Table.
+   - Removing resource from a statefile to avoid  destroy.
+      - Example: terraform state rm aws_dynamodb_table.terraform_lock
+      - Remove or comment the resource block in the Terraform block.
    - Deleting commits with git reset 
 
     
