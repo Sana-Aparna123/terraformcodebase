@@ -22,11 +22,12 @@ resource "type-of-resource" "name-of-the-resource" {
 * update the access key and secret key details in  "~/.aws/credentials" file.
 
 ### Git Topics Discussed
-* Creating repo and pushing code to remote repos in Github.   
-* Creaing branches based on user stories.    
-* Pushing the branch to remote repo and raising the Pull Request.      
-* Inviting collaborators and assign as reviewer for approval.     
-* Deleting the branches once the PR is approved and merged.  
+* Task-1 
+   - Creating repo and pushing code to remote repos in Github.   
+   - Creaing branches based on user stories.    
+   - Pushing the branch to remote repo and raising the Pull Request.      
+   - Inviting collaborators and assign as reviewer for approval.     
+   - Deleting the branches once the PR is approved and merged.  
 
 
 * Task-2  
