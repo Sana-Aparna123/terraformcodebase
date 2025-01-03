@@ -90,7 +90,30 @@ resource "type-of-resource" "name-of-the-resource" {
       - terraform state pull > terraform.tfstate
       - comment the backend in provider.tf file
       - Run terraform init -migrate-state 
+      - Store the local terraform state file in another new s3 bucket.
+      - Edit some resources and check new statefile is updated.   
 
+* Task-4         
+   #Merge will not change commit history. means it won't rewrite the commit history.                  
+   #Rebase will move the commits data above latest commit.while moving it will rewrite commit history.              
+   - Understanding Git Merge and Rebase         
+   - Git Interactive Rebase    
+      - Delete specific commits    
+      - Meld commit in to previous commit     
+      - Edit multiple commit messages    
+   - Dealing with large files in git.  #Large File System(LFS)    
+      - By default GitHub blocks files larger than 100 MiB.     
+      - navigate to folder where your large file is present it should be more than 100MB.    
+      - sudo apt-get install git-lfs     
+      - git lfs install    
+      - git lfs track "*.zip" (or) git lfs track "*.mp4"  
+      - git add .gitattributes        
+      - git status          
+      - git add . && git commit -m "commit message"               
+      - git push origin <branch-name>             
+      - git lfs fetch --all    #Only download the references not files.    
+      - git lfs pull    #Download the files    
+   - Git Stash   
 
 
 
