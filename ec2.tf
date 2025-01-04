@@ -1,18 +1,19 @@
-resource "aws_instance" "Nginx-Server-01" {
-  # count                       = 0
-  ami                         = var.image_name
-  instance_type               = var.instance_type
-  availability_zone           = "us-east-1a"
-  subnet_id                   = aws_subnet.subnet1.id
-  vpc_security_group_ids      = [aws_security_group.allow_tls.id]
+resource "aws_instance" "public_servers" {
+  count             = var.env == "Dev" || var.env == "DEV" ? 3 : 1
+  ami               = lookup(var.image_name, var.region)
+  instance_type     = var.instance_type
+  availability_zone = element(var.availability_zones, count.index)
+  subnet_id         = element(aws_subnet.public_subnets[*].id, count.index)
+  vpc_security_group_ids = [
+    aws_security_group.allow_all_sg_dynamic.id,
+    aws_security_group.allow_all_sg.id
+  ]
   associate_public_ip_address = true
   key_name                    = var.key_name_instance
 
   tags = {
-    Name       = "${var.vpc_name}-Nginx-Server"
-    Env        = "Prod"
-    Owner      = "Aparna"
-    CostCenter = "ABCD"
+    Name = "${var.vpc_name}-Nginx-Server-${count.index + 1}"
+    Env  = var.env
   }
 
   # User data script to deploy Nginx
@@ -27,12 +28,12 @@ resource "aws_instance" "Nginx-Server-01" {
    echo "<div><h1>$(cat /etc/hostname)</h1></div>" >> /usr/share/nginx/html/index.html
   EOF
 
-  lifecycle {
-    ignore_changes = [
-      user_data,
-      tags
-    ]
-    #revent_destroy = true  # Prevents the instance from being destroyed by terraform
-    prevent_destroy = false
-  }
+  # lifecycle {
+  #   ignore_changes = [
+  #     user_data,
+  #     tags
+  #   ]
+  #   #revent_destroy = true  # Prevents the instance from being destroyed by terraform
+  #   prevent_destroy = false
+  # }
 }

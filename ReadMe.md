@@ -119,15 +119,17 @@ resource "type-of-resource" "name-of-the-resource" {
       - git stash pop    
 * Task-5
    - Terraform Functions
-      - count
-      - element
-      - lookup
-      - map
-      - condition
-      - set
-      - distinct
-      - locals #locals block
-      - for   #loops
-      - for-each
+      - count   
+      - element    
+      - length    
+      - Dynamic block with for each 
+      - locals #locals block       
+      - toset   - it will remove duplicates amd maintain elements in unordered format in the  list.            
+      - distinct - Used with Lists it will remove duplicates and maintain elements in order format in the list.      
+      - lookup    
+      - map   
+      - condition   
+      - for   #loops   
+      - for-each    
 
 
