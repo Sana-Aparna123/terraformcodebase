@@ -117,6 +117,17 @@ resource "type-of-resource" "name-of-the-resource" {
       - git stash    
       - git stash list    
       - git stash pop    
-
+* Task-5
+   - Terraform Functions
+      - count
+      - element
+      - lookup
+      - map
+      - condition
+      - set
+      - distinct
+      - locals #locals block
+      - for   #loops
+      - for-each
 
 
