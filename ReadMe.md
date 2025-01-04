@@ -113,7 +113,10 @@ resource "type-of-resource" "name-of-the-resource" {
       - git push origin <branch-name>             
       - git lfs fetch --all    #Only download the references not files.    
       - git lfs pull    #Download the files    
-   - Git Stash   
+   - Git Stash  #if you dont want to commit the changes for some particular time we send that changes into stash by using git stash and commit it later by poping the stash.  (or)  git stash is used to temporarily save changes that you don't want to commit right away.     
+      - git stash    
+      - git stash list    
+      - git stash pop    
 
 
 
