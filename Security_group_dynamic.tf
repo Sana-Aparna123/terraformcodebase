@@ -5,8 +5,10 @@
 #    }
 
 locals {
-  inbound_ports  = distinct(var.inbound_ports)
-  outbound_ports = distinct(var.outbound_ports)
+  #create a list of unique inbound ports with order preserved
+  inbound_ports = distinct(var.inbound_ports)
+  #create a set of unique outbound ports with no order.
+  outbound_ports = toset(var.outbound_ports)
 }
 
 
@@ -19,6 +21,7 @@ resource "aws_security_group" "allow_all_sg_dynamic" {
     Name = "allow_all_sg_dynamic"
   }
 
+  #Since inbound_ports is a list, we can use value to access the elements.
   dynamic "ingress" {
     for_each = local.inbound_ports
     content {
@@ -29,10 +32,13 @@ resource "aws_security_group" "allow_all_sg_dynamic" {
     }
   }
 
+  #Since outbound_ports is a set, we can use either key or value to access the elements.
   dynamic "egress" {
     for_each = local.outbound_ports
     content {
-      from_port   = egress.value
+      # from_port   = egress.value
+      # to_port     = egress.value
+      from_port   = egress.key
       to_port     = egress.value
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]

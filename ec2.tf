@@ -14,18 +14,17 @@ resource "aws_instance" "public_servers" {
   tags = {
     Name = "${var.vpc_name}-Nginx-Server-${count.index + 1}"
     Env  = var.env
+    version = "v4.0"
   }
 
   # User data script to deploy Nginx
   user_data = <<-EOF
-   #!/bin/bash
-   yum update -y
-   yum install telnet -y
-   yum install -y tmux
-   amazon-linux-extras install nginx1.12 -y
-   service nginx start
-   systemctl enable nginx
-   echo "<div><h1>$(cat /etc/hostname)</h1></div>" >> /usr/share/nginx/html/index.html
+  #!/bin/bash
+  sudo apt-get update
+  sudo apt-get install -y net-tools unzip nginx
+  sudo systemctl start nginx
+  sudo systemctl enable nginx
+  echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.nginx-debian.html
   EOF
 
   # lifecycle {

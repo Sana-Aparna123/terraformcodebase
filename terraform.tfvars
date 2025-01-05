@@ -6,8 +6,8 @@ availability_zones         = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east
 private_subnets_cidr_range = ["10.0.10.0/24", "10.0.20.0/24", "10.0.30.0/24", "10.0.40.0/24", "10.0.10.0/24"]
 instance_type              = "t2.micro"
 image_name = {
-  "us-east-1" = "ami-0ca9fb66e076a6e32",
-  "us-east-2" = "ami-06744fbd0847bf4f5"
+  "us-east-1" = "ami-005fc0f236362e99f",
+  "us-east-2" = "ami-00eb69d236edcfaf8"
 }
 region            = "us-east-1"
 key_name_instance = "devops-key"

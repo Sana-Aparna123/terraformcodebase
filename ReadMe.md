@@ -131,10 +131,18 @@ resource "type-of-resource" "name-of-the-resource" {
       - condition       
       - for   #loops       
       - for-each     
-* Task-6   
-   - More about for-each and for      
-   - provisioners      
-   - null_resource/terraform_data       
+* Task-6         
+   - When to use count and for-each            
+      - count is a good choice when we use integer value for creating resources.       
+      - If you are planning to use conditions,then count is a good choice.        
+      - challenge with count is,it follows the indexing,so we can only add the item at end of the list.            
+   - More about for-each and for               
+   - provisioners  
+      - File : Used for copying files from a local environment to a remote one 
+      - Remote-exec : Runs commands or scripts on a remote resource over SSH or WinRM
+      - Local-exec  : Runs commands or scripts on the machine where Terraform is executed          
+   - null_resource/terraform_data 
+   - terraform taint & untaint              
 
    
 
